@@ -8,7 +8,7 @@
 
 ## Title
 
-NerdHerd
+nerdHerd
 
 ## Description
 
@@ -28,6 +28,13 @@ This portion, we will work on HOW things render and any added JS functionality t
 Beefing up our UI and polishing everything to perfection.
 
 \*\*Side note: I would like to add Twitch API capability to allow users to sign in using Twitch, pick a game and then stream it.
+
+### Technologies
+
+IGDB API - for games list and images
+React - building front-end
+SCSS/CSS - styling
+**More to come?**
 
 ### Installation
 
