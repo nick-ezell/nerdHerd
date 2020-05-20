@@ -8,7 +8,7 @@
 
 ## Title
 
-nerdHerd
+nerdHerder
 
 ## Description
 
