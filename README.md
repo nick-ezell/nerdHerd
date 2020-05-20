@@ -1,6 +1,6 @@
-[![Dependency Status](https://img.shields.io/david/nick-ezell/nerdHerd)](https://github.com/nick-ezell/NerdHerd)
+[![Dependency Status](https://img.shields.io/david/nick-ezell/nerdHerd)](https://github.com/nick-ezell/nerdHerd)
 [![Node License](https://img.shields.io/npm/l/axios)](https://github.com/nick-ezell/nerdHerd)
-[![Package Version](https://img.shields.io/github/package-json/v/nick-ezell/nerdHerd)](https://github.com/nick-ezell/NerdHerd)
+[![Package Version](https://img.shields.io/github/package-json/v/nick-ezell/nerdHerd)](https://github.com/nick-ezell/nerdHerd)
 
 # GitHub
 
