@@ -1,5 +1,5 @@
 const express = require("express");
-import path from "path";
+const path = require("path");
 // const mongoose = require("mongoose");
 
 const PORT = process.env.PORT || 3000;
