@@ -1,6 +1,6 @@
-[![Dependency Status](https://img.shields.io/david/nick-ezell/nerdHerd)](https://github.com/nick-ezell/nerdHerder)
-[![Node License](https://img.shields.io/npm/l/axios)](https://github.com/nick-ezell/nerdHerder)
-[![Package Version](https://img.shields.io/github/package-json/v/nick-ezell/nerdHerd)](https://github.com/nick-ezell/nerdHerder)
+[![Dependency Status](https://img.shields.io/david/nick-ezell/nerdHerd)](https://github.com/nick-ezell/nerdHerde
+[![Node License](https://img.shields.io/npm/l/axios)](https://github.com/nick-ezell/nerdHerd)
+[![Package Version](https://img.shields.io/github/package-json/v/nick-ezell/nerdHerd)](https://github.com/nick-ezell/nerdHerd)
 
 # GitHub
 
@@ -8,7 +8,7 @@
 
 ## Title
 
-nerdHerder
+nerdHerd
 
 ## Description
 
