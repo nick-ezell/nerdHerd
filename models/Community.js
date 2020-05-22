@@ -9,7 +9,6 @@ const communitySchema = new Schema({
     {
       type: Schema.Types.ObjectId,
       ref: "Users",
-      required: true,
     },
   ],
   game: [{ type: String, required: false }],
