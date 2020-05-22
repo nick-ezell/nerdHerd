@@ -11,11 +11,14 @@ const communitySchema = new Schema({
       ref: "Users",
     },
   ],
-  game: [{ type: String, required: false }],
+  game: {
+    type: Schema.Types.ObjectId,
+    ref: "Games",
+    required: true,
+  },
   description: [{ type: String, required: false }],
   // posts: [{ type: String, required: false }],
   activeGroups: [{ type: String, required: false }],
-  // Maybe add an image value for a user's user avatar picture?
 });
 
 const Community = mongoose.model("Community", communitySchema);

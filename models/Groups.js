@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const groupsSchema = new Schema({
+  title: { type: String, required: true },
   leader: {
     type: Schema.Types.ObjectId,
     ref: "Users",
@@ -14,7 +15,6 @@ const groupsSchema = new Schema({
     },
   ],
   game: { type: String, required: true },
-  title: { type: String, required: true },
   activity: { type: String, required: false },
 });
 

@@ -7,7 +7,6 @@ const usersSchema = new Schema({
   username: { type: String, required: true },
   dateJoined: { type: Date, default: Date.now, required: true },
   posts: [{ type: String, required: false }],
-  groups: [{ type: String, required: false }],
   communities: [{ type: String, required: false }],
   squad: [{ type: String, required: false }],
   favGames: [{ type: String, required: false }],
