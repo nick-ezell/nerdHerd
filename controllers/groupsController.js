@@ -1,6 +1,7 @@
+//Bring in models folder contents
 const db = require("../models");
 
-// Defining methods for the postsController
+// Defining methods for the groupsController
 module.exports = {
   findByGame: function (req, res) {
     db.Groups.find({ game: req.query })

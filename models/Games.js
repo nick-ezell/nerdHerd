@@ -1,6 +1,8 @@
+//Dependencies
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
+//Creating Games schema
 const gamesSchema = new Schema({
   company: { type: String, required: true },
   image: { type: String, required: false },
@@ -20,6 +22,7 @@ const gamesSchema = new Schema({
   ],
 });
 
+//Creating value for Games model
 const Games = mongoose.model("Games", gamesSchema);
 
 module.exports = Games;

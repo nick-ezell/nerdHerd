@@ -1,16 +1,13 @@
 const path = require("path");
 const router = require("express").Router();
 
-// Import routes from ./api/index.js
-const apiRoutes = require("./api");
+// Import routes from ./api/index
+const apiRoutes = require("./api/index");
 
-// Sets API Routes and path to be www.url.com/api/etc.
+// Listening for the /api prefix in routes and using api routes from ./api/index
 router.use("/api", apiRoutes);
 
-/***********************|
-|*  SET UP VIEW ROUTE  *|
-|***********************/
-// If no API routes are hit, send the React app
+// If no routes are hit, start React app by default
 router.use(function (req, res) {
   res.sendFile(path.join(__dirname, "../client/build/index.html"));
 });

@@ -1,6 +1,8 @@
+//Dependencies
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
+//Check password length and enforce complexity check
 const complexityCheck = (password) => {
   const hasUpperCase = /[A-Z]/.test(password);
   const hasNumbers = /\d/.test(password);
@@ -12,6 +14,7 @@ const complexityCheck = (password) => {
   }
 };
 
+//Creating the schema for our Users model
 const usersSchema = new Schema({
   email: {
     type: String,
@@ -52,6 +55,7 @@ const usersSchema = new Schema({
   // Maybe add an image value for a user's user avatar picture?
 });
 
+//Setting a value to the Users model
 const Users = mongoose.model("Users", usersSchema);
 
 module.exports = Users;

@@ -1,6 +1,7 @@
+//Bring in models folder contents
 const db = require("../models");
 
-// Defining methods for the postsController
+// Defining methods for the usersController
 module.exports = {
   findByUser: function (req, res) {
     db.Users.find({ username: req.query })
