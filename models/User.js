@@ -6,7 +6,7 @@ const usersSchema = new Schema({
   password: { type: String, required: true },
   username: { type: String, required: true },
   dateJoined: { type: Date, default: Date.now, required: true },
-  posts: [{ type: String, required: false }],
+  // posts: [{ type: String, required: false }],
   communities: [{ type: String, required: false }],
   friends: [
     {
