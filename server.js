@@ -16,7 +16,7 @@ if (process.env.NODE_ENV === "production") {
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/nerdHerd");
 
 // routes
-// app.use(require("./routes/api.js"));
+app.use(require("./routes"));
 
 if (process.env.NODE_ENV === "production") {
   app.get("*", (req, res) =>

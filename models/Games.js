@@ -6,6 +6,12 @@ const gamesSchema = new Schema({
   image: { type: String, required: false },
   title: { type: String, required: true },
   genre: { type: String, required: false },
+  groups: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Groups",
+    },
+  ],
   communities: [
     {
       type: Schema.Types.ObjectId,

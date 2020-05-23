@@ -14,8 +14,12 @@ const groupsSchema = new Schema({
       ref: "Users",
     },
   ],
-  game: { type: String, required: true },
+  game: {
+    type: Schema.Types.ObjectId,
+    ref: "Games",
+  },
   activity: { type: String, required: false },
+  active: { type: Boolean, required: true, default: true },
 });
 
 const Groups = mongoose.model("Groups", groupsSchema);
