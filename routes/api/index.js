@@ -1,15 +1,19 @@
 const router = require("express").Router();
 
 // Import our database model routes
-// const collectionNameRoutes = require("./collectionName");
+const groupsRoutes = require("./groups");
+const gamesRoutes = require("./games");
+const usersRoutes = require("./users");
+const communityRoutes = require("./community");
 // const scrapeRoutes = require("./scrape");
 
-// Sets path to use individual routes
-// EXAMPLE:
-//   router.use("/collectionName", collectionNameRoutes);
+// Set paths to use individual routes for our models
 //   // www.url.com/api/collectionName will use routes from collectionNameRoutes
-router.use("/collectionName", collectionNameRoutes);
-router.use("/scrape", scrapeRoutes);
+router.use("/groups", groupsRoutes);
+router.use("/games", gamesRoutes);
+router.use("/users", usersRoutes);
+router.use("/community", communityRoutes);
+// router.use("/scrape", scrapeRoutes);
 
 /***********|
 |* EXPORTS *| 

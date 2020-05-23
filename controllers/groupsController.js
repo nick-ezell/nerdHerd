@@ -4,7 +4,7 @@ const db = require("../models");
 // Defining methods for the groupsController
 module.exports = {
   findByGame: function (req, res) {
-    db.Groups.find({ game: req.query })
+    db.Groups.findAll({ game: req.query })
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
