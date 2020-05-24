@@ -7,6 +7,6 @@ const devSchema = new Schema({
   image: { type: String, requied: false },
 });
 
-const Devs = mongoose.models("Devs", devSchema);
+const Dev = mongoose.model("Devs", devSchema);
 
-module.exports = Devs;
+module.exports = Dev;

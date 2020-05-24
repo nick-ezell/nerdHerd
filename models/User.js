@@ -15,7 +15,7 @@ const complexityCheck = (password) => {
 };
 
 //Creating the schema for our Users model
-const usersSchema = new Schema({
+const userSchema = new Schema({
   email: {
     type: String,
     trim: true,
@@ -40,11 +40,20 @@ const usersSchema = new Schema({
     {
       friendID: {
         type: Schema.Types.ObjectId,
-        ref: "Users",
+        ref: "User",
       },
-      max: 25,
     },
   ],
+  // validate: {
+  //   validator: (length) => {
+  //     if (length >= 25) {
+  //       return false;
+  //     } else {
+  //       return true;
+  //     }
+  //   },
+  //   message: "Well aren't you popular? List is full!",
+  // },
   favGames: [
     {
       type: Schema.Types.ObjectId,
@@ -56,6 +65,6 @@ const usersSchema = new Schema({
 });
 
 //Setting a value to the Users model
-const Users = mongoose.model("Users", usersSchema);
+const User = mongoose.model("Users", userSchema);
 
-module.exports = Users;
+module.exports = User;

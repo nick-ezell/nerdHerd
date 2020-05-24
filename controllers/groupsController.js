@@ -1,5 +1,5 @@
 //Bring in models folder contents
-const db = require("../models");
+const db = require("../models/Groups");
 
 // Defining methods for the groupsController
 module.exports = {

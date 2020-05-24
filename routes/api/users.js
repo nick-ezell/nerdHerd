@@ -2,21 +2,18 @@
 const router = require("express").Router();
 
 // Imports in controller for collectionName
-import {
-  findByUser,
-  findById,
-  findByEmail,
-  create,
-  update,
-} from "../../controllers/usersController";
+const usersController = require("../../controllers/usersController");
 
 // Matches with "/api/collectionName" this is defined in "../index.js"
-router.route("/:user").get(findByUser);
+router.route("/search/:username").get(usersController.findByUser);
 
-router.route("/:email").get(findByEmail).post(create);
+router.route("/:id").get(usersController.findById);
 
-// Matches with "/api/collectionName/:id" this is defined in "../index.js"
-router.route("/:id").get(findById).put(update);
+router.route("/search/:email").get(usersController.findByEmail);
+
+router.route("/create").post(usersController.create);
+
+router.route("/:id").put(usersController.update);
 
 /***********|
 |* EXPORTS *| 

@@ -7,13 +7,13 @@ const groupsSchema = new Schema({
   title: { type: String, required: true },
   leader: {
     type: Schema.Types.ObjectId,
-    ref: "Users",
+    ref: "User",
     required: true,
   },
   party: [
     {
       type: Schema.Types.ObjectId,
-      ref: "Users",
+      ref: "User",
     },
   ],
   game: {

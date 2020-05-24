@@ -15,7 +15,7 @@ app.use(express.json());
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/nerdHerd");
 
 // Getting the contents of our routes folder
-app.use(require("./routes"));
+app.use(require("./routes/index"));
 
 //Listening for deployment env variable to send built app
 if (process.env.NODE_ENV === "production") {

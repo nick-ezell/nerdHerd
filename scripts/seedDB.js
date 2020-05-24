@@ -20,10 +20,10 @@ const devSeed = [
   },
 ];
 
-db.Post.remove({})
-  .then(() => db.Devs.collection.insertMany(devSeed))
+db.Dev.deleteMany({})
+  .then(db.Dev.insertMany(devSeed))
   .then((data) => {
-    console.log(data.result.n + " records inserted!");
+    console.log(data);
     process.exit(0);
   })
   .catch((err) => {
