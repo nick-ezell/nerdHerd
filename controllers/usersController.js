@@ -20,6 +20,7 @@ module.exports = {
   },
   create: function (req, res) {
     const body = req.body;
+
     db.User.create({
       email: body.email,
       password: body.password,

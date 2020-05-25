@@ -30,35 +30,25 @@ const userSchema = new Schema({
         "Password requires a Length of 8, an uppercase, number and special character.",
     },
   },
-  username: { type: String, trim: true, required: true },
-  dateJoined: { type: Date, default: Date.now, required: true },
+  username: { type: String, trim: true },
+  dateJoined: { type: Date, default: Date.now },
   // posts: [{ type: String, required: false }],
-  communities: [{ type: String, required: false }],
+  communities: [{ type: String }],
   friends: [
     {
-      friendID: {
-        type: Schema.Types.ObjectId,
-        ref: "User",
-      },
+      // friendID: {
+      //   type: Schema.Types.ObjectId,
+      //   ref: "User",
+      // },
     },
   ],
-  // validate: {
-  //   validator: (length) => {
-  //     if (length >= 25) {
-  //       return false;
-  //     } else {
-  //       return true;
-  //     }
-  //   },
-  //   message: "Well aren't you popular? List is full!",
-  // },
   favGames: [
     {
       type: Schema.Types.ObjectId,
       ref: "Games",
     },
   ],
-  recentSearches: [{ type: String, trim: true, required: false }],
+  recentSearches: [{ type: String, trim: true }],
   // Maybe add an image value for a user's user avatar picture?
 });
 
