@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 //Creating Groups schema
 const groupsSchema = new Schema({
-  title: { type: String, required: true },
+  title: { type: String },
   leader: {
     type: Schema.Types.ObjectId,
     ref: "User",
@@ -20,7 +20,7 @@ const groupsSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "Games",
   },
-  activity: { type: String, required: false },
+  activity: { type: String },
   active: { type: Boolean, required: true, default: true },
 });
 

@@ -4,10 +4,10 @@ const Schema = mongoose.Schema;
 
 //Creating Games schema
 const gamesSchema = new Schema({
-  company: { type: String, required: true },
-  image: { type: String, required: false },
-  title: { type: String, required: true },
-  genre: { type: String, required: false },
+  company: { type: String },
+  image: { type: String },
+  title: { type: String },
+  genre: { type: String },
   groups: [
     {
       type: Schema.Types.ObjectId,

@@ -19,13 +19,11 @@ const userSchema = new Schema({
   email: {
     type: String,
     trim: true,
-    required: true,
     match: [/.+@.+\..+/, "Please enter a valid e-mail address."],
   },
   password: {
     type: String,
     trim: true,
-    required: true,
     validate: {
       validator: (password) => complexityCheck(password),
       message:

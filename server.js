@@ -12,7 +12,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 //Database init/connection for local and deployment
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/nerdHerd");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/nerdHerd", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 // Getting the contents of our routes folder
 app.use(require("./routes/index"));
