@@ -14,7 +14,14 @@ module.exports = {
       .catch((err) => res.status(422).json(err));
   },
   create: function (req, res) {
-    db.Groups.create(req.body)
+    const body = req.body;
+    db.Groups.create({
+      title: body.title,
+      leader: body.leader,
+      party: body.party,
+      game: body.game,
+      activity: body.activity,
+    })
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },

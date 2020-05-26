@@ -9,7 +9,7 @@ router.route("/:game").get(() => {
   groupsController.findByGame;
 });
 
-router.route("/:game/create").post(() => {
+router.route("/create").post(() => {
   groupsController.create;
 });
 

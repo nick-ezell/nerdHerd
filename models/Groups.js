@@ -8,12 +8,10 @@ const groupsSchema = new Schema({
   leader: {
     type: Schema.Types.ObjectId,
     ref: "User",
-    required: true,
   },
   party: [
     {
-      type: Schema.Types.ObjectId,
-      ref: "User",
+      player: { type: Schema.Types.ObjectId, ref: "User" },
     },
   ],
   game: {
@@ -21,7 +19,6 @@ const groupsSchema = new Schema({
     ref: "Games",
   },
   activity: { type: String },
-  active: { type: Boolean, required: true, default: true },
 });
 
 //Creating value for Groups models

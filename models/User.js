@@ -34,14 +34,6 @@ const userSchema = new Schema({
   dateJoined: { type: Date, default: Date.now },
   // posts: [{ type: String, required: false }],
   communities: [{ type: String }],
-  friends: [
-    {
-      // friendID: {
-      //   type: Schema.Types.ObjectId,
-      //   ref: "User",
-      // },
-    },
-  ],
   favGames: [
     {
       type: Schema.Types.ObjectId,
@@ -49,6 +41,12 @@ const userSchema = new Schema({
     },
   ],
   recentSearches: [{ type: String, trim: true }],
+  groups: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Groups",
+    },
+  ],
   // Maybe add an image value for a user's user avatar picture?
 });
 

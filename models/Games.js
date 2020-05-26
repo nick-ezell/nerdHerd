@@ -14,12 +14,12 @@ const gamesSchema = new Schema({
       ref: "Groups",
     },
   ],
-  communities: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "Community",
-    },
-  ],
+  // communities: [
+  //   {
+  //     type: Schema.Types.ObjectId,
+  //     ref: "Community",
+  //   },
+  // ],
 });
 
 //Creating value for Games model
