@@ -13,6 +13,11 @@ module.exports = {
       .then((games) => res.json(games))
       .catch((err) => res.status(422).json(err));
   },
+  findById: function (req, res) {
+    db.Games.find({ _id: req.params.id })
+      .then((games) => res.json(games))
+      .catch((err) => res.status(422).json(err));
+  },
   create: function (req, res) {
     const body = req.body;
 

@@ -22,7 +22,7 @@ router
     groupsController.update;
   });
 
-router.route("/remove/:id").get(() => {
+router.route("/remove/:id").delete(() => {
   groupsController.removeGroup;
 });
 
