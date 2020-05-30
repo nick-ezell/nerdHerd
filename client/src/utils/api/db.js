@@ -3,7 +3,7 @@ import axios from "axios";
 export default {
   //User functions
   getUserByName: function (username) {
-    return axios.get(() => `/api/user/${username}`);
+    return axios.get(`/api/user/${username}`);
   },
 
   getUserByEmail: function (email) {
@@ -23,9 +23,7 @@ export default {
   },
   //Group functions
   getGroupsByGame: function (game) {
-    return axios.get(() => {
-      `/api/groups/${game}`;
-    });
+    return axios.get(`/api/groups/${game}`);
   },
 
   getGroupById: function (id) {

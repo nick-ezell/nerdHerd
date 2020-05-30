@@ -34,4 +34,12 @@ module.exports = {
       .then((user) => res.json(user))
       .catch((err) => res.status(422).json(err));
   },
+  // addFavGame: function (req, res) {
+  //   const body = req.body;
+  //   db.Games.findOne(
+  //     { _id: req.params.id }
+  //   )
+  //     .then((dbModel) => res.json(dbModel))
+  //     .catch((err) => res.status(422).json(err));
+  // },
 };

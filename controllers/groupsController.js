@@ -17,16 +17,34 @@ module.exports = {
     const body = req.body;
     db.Groups.create({
       title: body.title,
-      leader: body.leader,
+      leader: body.userId,
       party: body.party,
       game: body.game,
       activity: body.activity,
     })
+      .then((dbModel) =>
+        db.Games.findOneAndUpdate(
+          { _id: body.game },
+          { $push: { groups: dbModel._id } },
+          { new: true }
+        )
+      )
+      .then((dbModel) =>
+        db.User.findOneAndUpdate(
+          { _id: body.userId },
+          { $push: { groups: dbModel._id } },
+          { new: true }
+        )
+      )
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
   update: function (req, res) {
-    db.Groups.findOneAndUpdate({ _id: req.params.id }, req.body)
+    const body = req.body;
+    db.Groups.findOneAndUpdate(
+      { _id: req.params.id },
+      { $push: { party: body.party } }
+    )
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },

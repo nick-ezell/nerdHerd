@@ -33,13 +33,13 @@ const userSchema = new Schema({
   username: { type: String, trim: true },
   dateJoined: { type: Date, default: Date.now },
   // posts: [{ type: String, required: false }],
-  communities: [{ type: String }],
-  favGames: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "Games",
-    },
-  ],
+  // communities: [{ type: String }],
+  // favGames: [
+  //   {
+  //     type: Schema.Types.ObjectId,
+  //     ref: "Games",
+  //   },
+  // ],
   recentSearches: [{ type: String, trim: true }],
   groups: [
     {

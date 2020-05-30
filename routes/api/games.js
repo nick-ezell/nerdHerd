@@ -5,26 +5,13 @@ const router = require("express").Router();
 const gamesController = require("../../controllers/gamesController");
 
 // Matches with "/api/collectionName" this is defined in "../index.js"
-router.route("/:title").get(() => {
-  gamesController.findByTitle;
-});
+router.route("/:title").get(gamesController.findByTitle);
 
-router.route("/:genre").get(() => {
-  gamesController.findByGenre;
-});
+router.route("/:genre").get(gamesController.findByGenre);
 
-router.route("/create").post(() => {
-  gamesController.create;
-});
+router.route("/create").post(gamesController.create);
 
-router
-  .route("/:id")
-  .get(() => {
-    gamesController.findById;
-  })
-  .put(() => {
-    gamesController.update;
-  });
+router.route("/:id").get(gamesController.findById).put(gamesController.update);
 
 // Export instance of express router which contains collectionName routes
 module.exports = router;
