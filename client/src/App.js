@@ -8,8 +8,8 @@ import Home from "./pages/Home";
 function App() {
   return (
     <Router>
-      <div>
-        <Nav />
+      <Nav />
+      <div className="container">
         <Switch>
           <Route exact path={["/", "/login"]}>
             <LoginPage />
