@@ -1,18 +1,14 @@
 import React from "react";
-import createUser from "../../utils/db/db";
+import { useUserContext } from "../../utils/UserState";
+// import createUser from "../../utils/db/db";
 
 const Signup = () => {
+  const [userState, dispatch] = useUserContext();
+  const [state, setState] = React.useState(userState);
   const handleSignUp = (event) => {
     event.preventDefault();
-    const email = document.getElementById("email").innerHTML;
-    const username = document.getElementById("username").innerHTML;
-    const password = document.getElementById("password").innerHTML;
-    const userData = {
-      email: email,
-      username: username,
-      password: password,
-    };
-    console.log(userData);
+    console.log(state);
+    console.log(userState);
   };
   return (
     <div>
@@ -26,6 +22,12 @@ const Signup = () => {
                     <label className="label">Email</label>
                     <div className="control has-icons-left">
                       <input
+                        onChange={(event) =>
+                          setState({ ...state, email: event.target.value }) &&
+                          dispatch({
+                            type: event.target.id,
+                          })
+                        }
                         id="email"
                         type="email"
                         placeholder="thisismyemail@gmail.com"
@@ -41,6 +43,9 @@ const Signup = () => {
                     <label className="label">Username</label>
                     <div className="control has-icons-left">
                       <input
+                        onChange={(event) =>
+                          setState({ ...state, username: event.target.value })
+                        }
                         id="username"
                         type="username"
                         placeholder="e.g. Leeroy Jenkins"
@@ -53,6 +58,9 @@ const Signup = () => {
                     <label className="label">Password</label>
                     <div className="control has-icons-left">
                       <input
+                        onChange={(event) =>
+                          setState({ ...state, password: event.target.value })
+                        }
                         id="password"
                         type="password"
                         placeholder="*******"

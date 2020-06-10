@@ -4,26 +4,29 @@ import Nav from "./components/Nav/index";
 import LoginPage from "./pages/Login";
 import SignupPage from "./pages/Signup";
 import Home from "./pages/Home";
+import { UserProvider } from "./utils/UserState";
 
 function App() {
   return (
-    <Router>
-      <Nav />
-      <div className="container">
-        <Switch>
-          <Route exact path={["/", "/login"]}>
-            <LoginPage />
-          </Route>
-          <Route exact path={["/signup"]}>
-            <SignupPage />
-          </Route>
-          <Route exact path="/user/profile"></Route>
-          <Route exact path={"/home"}>
-            <Home />
-          </Route>
-        </Switch>
-      </div>
-    </Router>
+    <UserProvider>
+      <Router>
+        <Nav />
+        <div className="container">
+          <Switch>
+            <Route exact path={["/", "/login"]}>
+              <LoginPage />
+            </Route>
+            <Route exact path={["/signup"]}>
+              <SignupPage />
+            </Route>
+            <Route exact path="/user/profile"></Route>
+            <Route exact path={"/home"}>
+              <Home />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
+    </UserProvider>
   );
 }
 

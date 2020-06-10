@@ -21,14 +21,20 @@ function reducer(state, action) {
   switch (action.type) {
     //the first two cases in our switch pertain to our "Front-End" and "Back-End" buttons
     //if hide
-    case "hide":
+    case "logout":
       return {
         ...state,
         //Change the context
+        username: "",
+        email: "",
+        password: "",
+        _id: "",
+      };
 
-        skills: "show",
-        frontend: "show",
-        backend: "show",
+    case "email":
+      return {
+        ...state,
+        email: action.data,
       };
 
     default:
@@ -36,7 +42,7 @@ function reducer(state, action) {
   }
 }
 
-function SkillsProvider({ value = [], ...props }) {
+function UserProvider({ value = [], ...props }) {
   const [state, dispatch] = useReducer(reducer, {
     username: "",
     email: "",
