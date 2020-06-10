@@ -10,7 +10,7 @@ const userRoutes = require("./users");
 router.use("/groups", groupsRoutes);
 // router.use("/games", gamesRoutes);
 router.use("/user", userRoutes);
-router.user("/games", gamesRoutes);
+router.use("/games", gamesRoutes);
 
 // Export instance of express router which contains API routes
 module.exports = router;
