@@ -27,9 +27,7 @@ export default {
   },
 
   getGroupById: function (id) {
-    return axios.get(() => {
-      `/api/groups/${id}`;
-    });
+    return axios.get(`/api/groups/${id}`);
   },
 
   updateGroup: function (groupData, id) {
@@ -37,38 +35,26 @@ export default {
   },
 
   createGroup: function (groupData) {
-    return axios.post(() => {
-      `/api/groups/create`, groupData;
-    });
+    return axios.post(`/api/groups/create`, groupData);
   },
 
   removeGroup: function (id) {
-    return axios.delete(() => {
-      `/api/groups/remove/${id}`;
-    });
+    return axios.delete(`/api/groups/remove/${id}`);
   },
   //Games functions
   getGameByTitle: function (title) {
-    return axios.get(() => {
-      `/api/games/${title}`;
-    });
+    return axios.get(`/api/games/${title}`);
   },
 
   getGameByGenre: function (genre) {
-    return axios.get(() => {
-      `/api/games/${genre}`;
-    });
+    return axios.get(`/api/games/${genre}`);
   },
 
   addGame: function (gameData) {
-    return axios.post(() => {
-      `/api/games/create`, gameData;
-    });
+    return axios.post(`/api/games/create`, gameData);
   },
 
   updateGame: function (id, gameData) {
-    return axios.put(() => {
-      `/api/games/${id}`, gameData;
-    });
+    return axios.put(`/api/games/${id}`, gameData);
   },
 };

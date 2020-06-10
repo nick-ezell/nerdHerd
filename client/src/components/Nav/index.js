@@ -24,7 +24,7 @@ const Nav = () => {
 
           <div className="navbar-end">
             <div className="navbar-item">
-              <a className="navbar-item" href="">
+              <a className="navbar-item" href="/home">
                 Home
               </a>
               <div className="navbar-item has-dropdown is-hoverable">
