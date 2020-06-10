@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Nav from "./components/Nav/index";
-import LoginPage from "./pages/Login";
-import SignupPage from "./pages/Signup";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 import Home from "./pages/Home";
 import { UserProvider } from "./utils/UserState";
 
@@ -15,10 +15,10 @@ function App() {
           <div className="container">
             <Switch>
               <Route exact path={["/", "/login"]}>
-                <LoginPage />
+                <Login />
               </Route>
               <Route exact path={["/signup"]}>
-                <SignupPage />
+                <Signup />
               </Route>
               <Route exact path="/user/profile"></Route>
               <Route exact path={"/home"}>
