@@ -10,6 +10,7 @@ const Signup = () => {
     console.log(state);
     console.log(userState);
   };
+
   return (
     <div>
       <section className="hero is-fullheight">
