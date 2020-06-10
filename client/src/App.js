@@ -8,25 +8,27 @@ import { UserProvider } from "./utils/UserState";
 
 function App() {
   return (
-    <UserProvider>
-      <Router>
-        <Nav />
-        <div className="container">
-          <Switch>
-            <Route exact path={["/", "/login"]}>
-              <LoginPage />
-            </Route>
-            <Route exact path={["/signup"]}>
-              <SignupPage />
-            </Route>
-            <Route exact path="/user/profile"></Route>
-            <Route exact path={"/home"}>
-              <Home />
-            </Route>
-          </Switch>
-        </div>
-      </Router>
-    </UserProvider>
+    <div>
+      <UserProvider>
+        <Router>
+          <Nav />
+          <div className="container">
+            <Switch>
+              <Route exact path={["/", "/login"]}>
+                <LoginPage />
+              </Route>
+              <Route exact path={["/signup"]}>
+                <SignupPage />
+              </Route>
+              <Route exact path="/user/profile"></Route>
+              <Route exact path={"/home"}>
+                <Home />
+              </Route>
+            </Switch>
+          </div>
+        </Router>
+      </UserProvider>
+    </div>
   );
 }
 
