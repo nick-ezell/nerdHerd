@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
-  "homepage": "https://nerdHerd.herokuapp.com/",
+  "homepage": "https://nerdherd.herokuapp.com/",
   "engines": {
     "node": "10.x"
   },
