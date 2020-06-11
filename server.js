@@ -4,7 +4,6 @@ const path = require("path");
 const mongoose = require("mongoose");
 
 const PORT = process.env.PORT || 3000;
-const NODE_ENV = process.env.NODE_ENV || "production";
 
 //Express init
 const app = express();
@@ -22,15 +21,17 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/nerdHerd", {
 app.use(require("./routes"));
 
 //Listening for deployment env variable to send built app
-if (NODE_ENV === "production") {
+if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "/client/build")));
-  app.get("*", function (req, res) {
-    console.log("hit *");
-    res.sendFile(path.join(__dirname, "/client/build/index.html"));
+}
+
+if (process.env.NODE_ENV === "production") {
+  app.get("*", function (request, response) {
+    response.sendFile(__dirname + "/client/build/index.html");
   });
 }
 
 app.listen(PORT, () => {
   console.log(`App running at https://localhost:${PORT}!`);
-  console.log(`'${NODE_ENV}'`);
+  console.log(`'${process.env.NODE_ENV}'`);
 });
