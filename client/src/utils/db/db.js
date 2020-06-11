@@ -3,19 +3,25 @@ import axios from "axios";
 export default {
   //User functions
   getUserByName: function (username) {
-    return axios.get(`/api/user/${username}`);
+    return axios.get(`/api/user/` + username);
   },
 
   getUserByEmail: function (email) {
-    return axios.get(`/api/user/${email}`);
+    return axios.get(`/api/user/` + email);
   },
 
   getUserById: function (id) {
-    return axios.get(`/api/user/${id}`);
+    return axios.get(`/api/user/` + id);
   },
 
   updateUserInfo: function (userData, id) {
-    return axios.put(`/api/user/${id}`, userData);
+    return axios.put(`/api/user/` + id, userData);
+  },
+
+  LoginUser: function (userData) {
+    return axios.get(
+      `/api/user/login/` + userData.email + `/` + userData.password
+    );
   },
 
   createUser: function (userData) {
@@ -23,15 +29,15 @@ export default {
   },
   //Group functions
   getGroupsByGame: function (game) {
-    return axios.get(`/api/groups/${game}`);
+    return axios.get(`/api/groups/` + game);
   },
 
   getGroupById: function (id) {
-    return axios.get(`/api/groups/${id}`);
+    return axios.get(`/api/groups/` + id);
   },
 
   updateGroup: function (groupData, id) {
-    return axios.put(`/api/groups/${id}`, groupData);
+    return axios.put(`/api/groups/` + id, groupData);
   },
 
   createGroup: function (groupData) {
@@ -39,15 +45,15 @@ export default {
   },
 
   removeGroup: function (id) {
-    return axios.delete(`/api/groups/remove/${id}`);
+    return axios.delete(`/api/groups/remove/` + id);
   },
   //Games functions
   getGameByTitle: function (title) {
-    return axios.get(`/api/games/${title}`);
+    return axios.get(`/api/games/` + title);
   },
 
   getGameByGenre: function (genre) {
-    return axios.get(`/api/games/${genre}`);
+    return axios.get(`/api/games/` + genre);
   },
 
   addGame: function (gameData) {
@@ -55,6 +61,6 @@ export default {
   },
 
   updateGame: function (id, gameData) {
-    return axios.put(`/api/games/${id}`, gameData);
+    return axios.put(`/api/games/` + id, gameData);
   },
 };

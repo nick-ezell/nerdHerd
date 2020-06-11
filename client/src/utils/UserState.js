@@ -38,7 +38,7 @@ function reducer(state, action) {
       };
 
     default:
-      console.log("Black Lives Matter ");
+      console.log("Black Lives Matter");
   }
 }
 

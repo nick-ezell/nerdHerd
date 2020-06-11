@@ -3,7 +3,7 @@ import { useUserContext } from "../../utils/UserState";
 // import createUser from "../../utils/db/db";
 
 const Signup = () => {
-  const [userState, dispatch] = useUserContext();
+  const [userState] = useUserContext();
   const [state, setState] = React.useState(userState);
   const handleSignUp = (event) => {
     event.preventDefault();
@@ -24,10 +24,7 @@ const Signup = () => {
                     <div className="control has-icons-left">
                       <input
                         onChange={(event) =>
-                          setState({ ...state, email: event.target.value }) &&
-                          dispatch({
-                            type: event.target.id,
-                          })
+                          setState({ ...state, email: event.target.value })
                         }
                         id="email"
                         type="email"
@@ -75,7 +72,7 @@ const Signup = () => {
                   </div>
                   <div className="field">
                     <button className="button is-dark" onClick={handleSignUp}>
-                      Sign up
+                      <a href="/home">ign up</a>
                     </button>
                   </div>
                 </form>

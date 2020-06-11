@@ -11,6 +11,8 @@ router.route("/:id").get(usersController.findById);
 
 router.route("/search/:email").get(usersController.findByEmail);
 
+router.route("/login/:email/:password").get(usersController.Login);
+
 router.route("/create").post(usersController.create);
 
 router.route("/:id").put(usersController.update);

@@ -14,7 +14,12 @@ module.exports = {
       .catch((err) => res.status(422).json(err));
   },
   findByEmail: function (req, res) {
-    db.User.findById(req.params.email)
+    db.User.findOne(req.params.email)
+      .then((user) => res.json(user))
+      .catch((err) => res.status(422).json(err));
+  },
+  Login: function (req, res) {
+    db.User.findOne({ email: req.params.email, password: req.params.password })
       .then((user) => res.json(user))
       .catch((err) => res.status(422).json(err));
   },
