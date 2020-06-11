@@ -1,5 +1,6 @@
 //Dependencies
 const express = require("express");
+const logger = require("morgan");
 const path = require("path");
 const mongoose = require("mongoose");
 
@@ -8,11 +9,14 @@ const PORT = process.env.PORT || 3000;
 //Express init
 const app = express();
 
+app.use(logger("dev"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+let MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/nerdHerd";
+
 //Database init/connection for local and deployment
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/nerdHerd", {
+mongoose.connect(MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
