@@ -8,14 +8,16 @@ const Login = () => {
   // const [ userState, setUserState] = useUserState();
 
   // Setting our component's initial state
-  const [setUser] = useState([]);
+  const [User, setUser] = useState({});
   const [formData, setFormData] = useState({});
 
   const handleLogin = () => {
     const { email, password } = formData;
+    console.log(email);
+    console.log(password);
     db.LoginUser(email, password)
-      .then((res) => db.getUserById({ _id: res.data._id }))
-      .then((res) => setUser(res.data))
+      .then((res) => console.log(res.data))
+      // .then(console.log(User))
       .catch((err) => console.log("Hey, this happened: " + err));
   };
 
