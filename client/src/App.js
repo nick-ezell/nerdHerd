@@ -10,8 +10,8 @@ function App() {
   return (
     <div>
       <UserProvider>
+        <Nav />
         <Router>
-          <Nav />
           <div className="container">
             <Switch>
               <Route exact path={["/", "/login"]}>
