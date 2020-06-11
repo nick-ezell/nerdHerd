@@ -24,9 +24,6 @@ app.use(require("./routes"));
 //Listening for deployment env variable to send built app
 if (NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "/client/build")));
-}
-//React app init
-if (NODE_ENV === "production") {
   app.get("*", function (req, res) {
     console.log("hit *");
     res.sendFile(path.join(__dirname, "/client/build/index.html"));
@@ -35,5 +32,5 @@ if (NODE_ENV === "production") {
 
 app.listen(PORT, () => {
   console.log(`App running at https://localhost:${PORT}!`);
-  console.log(`'${DEPLOYMODE}'`);
+  console.log(`'${NODE_ENV}'`);
 });
