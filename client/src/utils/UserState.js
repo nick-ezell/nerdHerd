@@ -28,7 +28,7 @@ function reducer(state, action) {
         username: "",
         email: "",
         password: "",
-        _id: "",
+        id: "",
       };
 
     case "email":
@@ -43,12 +43,7 @@ function reducer(state, action) {
 }
 
 function UserProvider({ value = [], ...props }) {
-  const [state, dispatch] = useReducer(reducer, {
-    username: "",
-    email: "",
-    password: "",
-    _id: "",
-  });
+  const [state, dispatch] = useReducer(reducer, {});
 
   return <Provider value={[state, dispatch]} {...props} />;
 }
