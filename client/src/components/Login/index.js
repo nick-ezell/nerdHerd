@@ -1,48 +1,46 @@
 import React, { useState } from "react";
 import db from "../../utils/db/db";
-// import { useUserContext, useUserState } from "../../utils/UserState";
+import { useUserContext } from "../../utils/UserState";
 
 const Login = () => {
-  // const [state, dispatch] = useUserContext();
-
-  // const [ userState, setUserState] = useUserState();
+  const [state, dispatch] = useUserContext();
 
   // Setting our component's initial state
-  const [User, setUser] = useState({});
-  const [formData, setFormData] = useState({});
+  const [UserData, setUserData] = useState({});
 
-  const handleLogin = () => {
-    const { email, password } = formData;
-    console.log(email);
-    console.log(password);
-    db.LoginUser(email, password)
-      .then((res) => console.log(res.data))
-      // .then(console.log(User))
-      .catch((err) => console.log("Hey, this happened: " + err));
+  const handleDispatch = (payload) => {
+    const data = payload;
+    dispatch({
+      type: "login",
+      payload: data,
+    });
   };
 
-  // Loads all books and sets them to books
-  // function handleLogin(formData, event) {
-  //   event.preventDefault();
+  const handleLogin = () => {
+    db.LoginUser(UserData)
+      .then((UserData) => {
+        setUserData(UserData);
+      })
+      .then((res) => {
+        console.log(res);
+        handleDispatch(res);
+      })
 
-  //   // LoginUser(formData.email)
-  //   //   .then((res) => setUser(res.data))
-  //   //   .catch((err) => console.log(err));
-  // }
+      .catch((err) => console.log("Hey, this happened: " + err));
+  };
 
   // Handles updating component state when the user types into the input field
   function handleInputChange(event) {
     const { name, value } = event.target;
-    setFormData({ ...formData, [name]: value });
-    console.log(formData);
+    setUserData({ ...UserData, [name]: value });
+    // console.log(UserData);
   }
 
-  // When the form is submitted, use the API.saveBook method to save the book data
-  // Then reload books from the database
   function handleFormSubmit(event) {
     event.preventDefault();
-    if (formData.email && formData.password) {
+    if (UserData.email && UserData.password) {
       handleLogin();
+      console.log(state);
     }
   }
 

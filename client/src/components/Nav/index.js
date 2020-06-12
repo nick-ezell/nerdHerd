@@ -3,9 +3,7 @@ import "./index.css";
 
 const Nav = () => {
   const [isActive, setisActive] = React.useState(false);
-  const toggleNav = (event) => {
-    isActive();
-  };
+
   return (
     // <div className="nav">
     //   <nav className="navbar" role="navigation" aria-label="main navigation">

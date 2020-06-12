@@ -1,12 +1,7 @@
 import React, { createContext, useContext, useReducer } from "react";
 
 //Create a context for skill lists to be shown/hidden
-const UserContext = createContext({
-  username: "",
-  email: "",
-  password: "",
-  _id: "",
-});
+const UserContext = createContext({});
 
 //Accessing context
 const useUserContext = () => {
@@ -21,21 +16,20 @@ function reducer(state, action) {
   switch (action.type) {
     //the first two cases in our switch pertain to our "Front-End" and "Back-End" buttons
     //if hide
-    case "logout":
+    case "login":
+      const { email, username, password } = action.payload;
       return {
         ...state,
-        //Change the context
-        username: "",
-        email: "",
-        password: "",
-        id: "",
+        email: email,
+        username: username,
+        password: password,
       };
 
-    case "email":
-      return {
-        ...state,
-        email: action.data,
-      };
+    // case "email":
+    //   return {
+    //     ...state,
+    //     email: action.data,
+    //   };
 
     default:
       console.log("Black Lives Matter");
@@ -43,7 +37,11 @@ function reducer(state, action) {
 }
 
 function UserProvider({ value = [], ...props }) {
-  const [state, dispatch] = useReducer(reducer, {});
+  const [state, dispatch] = useReducer(reducer, {
+    email: "",
+    username: "",
+    password: "",
+  });
 
   return <Provider value={[state, dispatch]} {...props} />;
 }

@@ -1,16 +1,40 @@
-import React from "react";
-import { useUserContext } from "../../utils/UserState";
-// import createUser from "../../utils/db/db";
+import React, { useState } from "react";
+import db from "../../utils/db/db";
+// import { useUserContext } from "../../utils/UserState";
 
 const Signup = () => {
-  const [userState] = useUserContext();
-  const [state, setState] = React.useState(userState);
-  const handleSignUp = (event) => {
-    event.preventDefault();
-    console.log(state);
-    console.log(userState);
+  // const [state, dispatch] = useUserContext();
+  const [UserData, setUserData] = useState({});
+
+  const handleLogin = () => {
+    const { email, username, password } = UserData;
+    db.createUser(email, username, password)
+      .then((res) => {
+        const data = res.data;
+
+        console.log(data);
+        // dispatch(data, {
+        //   type: "login",
+        //   payload: data,
+        // });
+      })
+
+      .catch((err) => console.log("Hey, this happened: " + err));
   };
 
+  function handleInputChange(event) {
+    const { name, value } = event.target;
+    setUserData({ ...UserData, [name]: value });
+    console.log(UserData);
+  }
+
+  function handleFormSubmit(event) {
+    event.preventDefault();
+    if (UserData.email && UserData.password) {
+      handleLogin();
+      console.log(UserData);
+    }
+  }
   return (
     <div>
       <section className="hero is-fullheight">
@@ -23,10 +47,9 @@ const Signup = () => {
                     <label className="label">Email</label>
                     <div className="control has-icons-left">
                       <input
-                        onChange={(event) =>
-                          setState({ ...state, email: event.target.value })
-                        }
+                        onChange={handleInputChange}
                         id="email"
+                        name="email"
                         type="email"
                         placeholder="thisismyemail@gmail.com"
                         className="input"
@@ -41,10 +64,9 @@ const Signup = () => {
                     <label className="label">Username</label>
                     <div className="control has-icons-left">
                       <input
-                        onChange={(event) =>
-                          setState({ ...state, username: event.target.value })
-                        }
+                        onChange={handleInputChange}
                         id="username"
+                        name="username"
                         type="username"
                         placeholder="e.g. Leeroy Jenkins"
                         className="input"
@@ -56,10 +78,9 @@ const Signup = () => {
                     <label className="label">Password</label>
                     <div className="control has-icons-left">
                       <input
-                        onChange={(event) =>
-                          setState({ ...state, password: event.target.value })
-                        }
+                        onChange={handleInputChange}
                         id="password"
+                        name="password"
                         type="password"
                         placeholder="*******"
                         className="input"
@@ -71,7 +92,10 @@ const Signup = () => {
                     </div>
                   </div>
                   <div className="field">
-                    <button className="button is-dark" onClick={handleSignUp}>
+                    <button
+                      className="button is-dark"
+                      onClick={handleFormSubmit}
+                    >
                       <a id="signup" href="/home">
                         Sign up
                       </a>

@@ -18,8 +18,10 @@ export default {
     return axios.put(`/api/user/` + id, userData);
   },
 
-  LoginUser: function (email, password) {
-    return axios.get(`/api/user/login/` + email + `/` + password);
+  LoginUser: function (userData) {
+    return axios.get(
+      `/api/user/login/` + userData.email + `/` + userData.password
+    );
   },
 
   createUser: function (userData) {
