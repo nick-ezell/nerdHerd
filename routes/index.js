@@ -12,5 +12,7 @@ router.use("/api", apiRoutes);
 //   res.sendFile(path.join(__dirname, "../client/build/index.html"));
 // });
 
+//Dont do this ^
+
 // Export instance of express router which contains API and VIEW routes
 module.exports = router;
