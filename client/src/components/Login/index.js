@@ -95,7 +95,7 @@ const Login = () => {
                   <div className="field">
                     <button
                       className="button is-dark"
-                      onClick={(event) => handleFormSubmit(event)}
+                      onClick={handleFormSubmit}
                     >
                       Login
                     </button>

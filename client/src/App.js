@@ -1,11 +1,7 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  BrowserRouter,
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Nav from "./components/Nav/index";
+import "./index.css";
 import LoginPage from "./pages/Login";
 import SignupPage from "./pages/Signup";
 import Home from "./pages/Home";
@@ -15,26 +11,25 @@ function App() {
   return (
     <div>
       <Nav />
-      <BrowserRouter>
-        <UserProvider>
-          <Router>
-            <div className="container">
-              <Switch>
-                <Route exact path={["/", "/login"]}>
-                  <LoginPage />
-                </Route>
-                <Route exact path={"/signup"}>
-                  <SignupPage />
-                </Route>
-                <Route exact path="/user/profile"></Route>
-                <Route exact path={"/home"}>
-                  <Home />
-                </Route>
-              </Switch>
-            </div>
-          </Router>
-        </UserProvider>
-      </BrowserRouter>
+
+      <UserProvider>
+        <Router>
+          <div className="container">
+            <Switch>
+              <Route exact path={["/", "/login"]}>
+                <LoginPage />
+              </Route>
+              <Route exact path={"/signup"}>
+                <SignupPage />
+              </Route>
+              <Route exact path="/user/profile"></Route>
+              <Route exact path={"/home"}>
+                <Home />
+              </Route>
+            </Switch>
+          </div>
+        </Router>
+      </UserProvider>
     </div>
   );
 }
