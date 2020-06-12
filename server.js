@@ -1,6 +1,5 @@
 //Dependencies
 const express = require("express");
-const logger = require("morgan");
 const path = require("path");
 const mongoose = require("mongoose");
 
@@ -9,7 +8,6 @@ const PORT = process.env.PORT || 3000;
 //Express init
 const app = express();
 
-app.use(logger("dev"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -26,12 +24,12 @@ app.use(require("./routes"));
 
 //Listening for deployment env variable to send built app
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "/client/build")));
+  app.use(express.static(path.join(__dirname, "./client/build")));
 }
 
 if (process.env.NODE_ENV === "production") {
   app.get("*", function (request, response) {
-    response.sendFile(__dirname + "/client/build/index.html");
+    response.sendFile(__dirname + "./client/build/index.html");
   });
 }
 

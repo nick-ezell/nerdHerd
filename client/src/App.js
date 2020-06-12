@@ -13,9 +13,9 @@ import { UserProvider } from "./utils/UserState";
 
 function App() {
   return (
-    <BrowserRouter>
-      <div>
-        <Nav />
+    <div>
+      <Nav />
+      <BrowserRouter>
         <UserProvider>
           <Router>
             <div className="container">
@@ -34,8 +34,8 @@ function App() {
             </div>
           </Router>
         </UserProvider>
-      </div>
-    </BrowserRouter>
+      </BrowserRouter>
+    </div>
   );
 }
 
