@@ -1,4 +1,5 @@
 import React from "react";
+import "./index.css";
 
 const Nav = () => {
   const [isActive, setisActive] = React.useState(false);
@@ -58,7 +59,12 @@ const Nav = () => {
     //   </nav>
     // </div>
     // );
-    <nav className="navbar" role="navigation" aria-label="main navigation">
+    <nav
+      id="navStyle"
+      className="navbar box"
+      role="navigation"
+      aria-label="main navigation"
+    >
       <div className="navbar-brand">
         <a href="/" className="navbar-item">
           <img src="./favicon.ico" alt="Logo" width="30" height="30" />
