@@ -8,9 +8,9 @@ const apiRoutes = require("./api/index");
 router.use("/api", apiRoutes);
 
 // If no routes are hit, start React app by default
-router.use(function (req, res) {
-  res.sendFile(path.join(__dirname, "../client/build/index.html"));
-});
+// router.use(function (req, res) {
+//   res.sendFile(path.join(__dirname, "../client/build/index.html"));
+// });
 
 // Export instance of express router which contains API and VIEW routes
 module.exports = router;

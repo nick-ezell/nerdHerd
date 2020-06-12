@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
-  "homepage": "/",
   "engines": {
     "node": "10.x"
   },
