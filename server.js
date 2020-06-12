@@ -19,21 +19,19 @@ mongoose.connect(MONGODB_URI, {
   useUnifiedTopology: true,
 });
 
-const routes = require("./routes");
-
 // Getting the contents of our routes folder
-app.use(routes);
+app.use(require("./routes/index"));
 
 //Listening for deployment env variable to send built app
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "client/build")));
+  app.use(express.static("client/build"));
 }
-
-if (process.env.NODE_ENV === "production") {
-  app.get("*", (request, response) => {
-    response.sendFile(__dirname + "index.html");
-  });
-}
+// //React app init
+// if (process.env.NODE_ENV === "production") {
+//   app.get("*", (req, res) =>
+//     res.sendFile(path.join(__dirname, "./client/build/index.html"))
+//   );
+// }
 
 app.listen(PORT, () => {
   console.log(`App running at https://localhost:${PORT}!`);
