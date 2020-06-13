@@ -96,14 +96,14 @@ const Signup = () => {
                     </div>
                   </div>
                   <div className="field">
-                    <button
-                      className="button is-dark"
-                      onClick={handleFormSubmit}
-                    >
-                      <a href="/home" id="buttonhref">
+                    <a href="/home" id="buttonhref">
+                      <button
+                        className="button is-dark"
+                        onClick={handleFormSubmit}
+                      >
                         Sign up
-                      </a>
-                    </button>
+                      </button>
+                    </a>
                   </div>
                 </form>
               </div>

@@ -83,15 +83,15 @@ const Login = () => {
                     </label>
                   </div>
                   <div className="field">
-                    <button
-                      name="login"
-                      className="button is-dark"
-                      onClick={handleFormSubmit}
-                    >
-                      <a href="/home" id="buttonhref">
+                    <a href="/home" id="buttonhref">
+                      <button
+                        name="login"
+                        className="button is-dark"
+                        onClick={handleFormSubmit}
+                      >
                         Login
-                      </a>
-                    </button>
+                      </button>
+                    </a>
                   </div>
                   <p>
                     No account? <a href="/signup">Sign up here!</a>
