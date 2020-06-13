@@ -5,6 +5,8 @@ const GameContext = createContext([{}]);
 
 const ApiContext = createContext();
 
+const UserContext = createContext();
+
 // //Accessing context
 // const useUserContext = () => {
 //   return useContext(UserContext);
@@ -48,4 +50,4 @@ const ApiContext = createContext();
 //   return <Provider value={[state, dispatch]} {...props} />;
 // }
 
-export { ApiContext, GameContext };
+export { ApiContext, GameContext, UserContext };

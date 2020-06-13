@@ -29,7 +29,9 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-let MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/nerdHerd";
+let MONGODB_URI =
+  process.env.MONGODB_URI ||
+  "mongodb://user1:password1@ds139956.mlab.com:39956/heroku_fgtf6kx5";
 
 //Database init/connection for local and deployment
 mongoose.connect(MONGODB_URI, {
