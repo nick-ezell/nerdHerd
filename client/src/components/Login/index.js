@@ -1,46 +1,34 @@
 import React, { useState } from "react";
 import db from "../../utils/db/db";
-import { useUserContext } from "../../utils/UserState";
 
 const Login = () => {
-  const [state, dispatch] = useUserContext();
-
   // Setting our component's initial state
   const [UserData, setUserData] = useState({});
 
-  const handleDispatch = (payload) => {
-    const data = payload;
-    dispatch({
-      type: "login",
-      payload: data,
-    });
-  };
-
-  const handleLogin = () => {
+  function handleLogin() {
     db.LoginUser(UserData)
       .then((UserData) => {
-        setUserData(UserData);
+        console.log(UserData.data);
+        // console.log(res.data);
+        // const data = res.data;
+        // console.log(data);
+        // setUserData(data);
+        // console.log(UserData);
       })
-      .then((res) => {
-        console.log(res);
-        handleDispatch(res);
-      })
-
       .catch((err) => console.log("Hey, this happened: " + err));
-  };
+  }
 
   // Handles updating component state when the user types into the input field
   function handleInputChange(event) {
     const { name, value } = event.target;
     setUserData({ ...UserData, [name]: value });
-    // console.log(UserData);
+    console.log(UserData);
   }
 
   function handleFormSubmit(event) {
     event.preventDefault();
     if (UserData.email && UserData.password) {
       handleLogin();
-      console.log(state);
     }
   }
 
@@ -92,6 +80,7 @@ const Login = () => {
                   </div>
                   <div className="field">
                     <button
+                      name="login"
                       className="button is-dark"
                       onClick={handleFormSubmit}
                     >

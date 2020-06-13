@@ -13,5 +13,7 @@ router.route("/create").post(gamesController.create);
 
 router.route("/:id").get(gamesController.findById).put(gamesController.update);
 
+router.route("/api").get(gamesController.api);
+
 // Export instance of express router which contains collectionName routes
 module.exports = router;

@@ -1,5 +1,6 @@
 //Bring in models folder contents
 const db = require("../models");
+const axios = require("axios");
 
 // Defining methods for the usersController
 module.exports = {
@@ -33,6 +34,15 @@ module.exports = {
   update: function (req, res) {
     db.Games.findOneAndUpdate({ _id: req.params.id }, req.body)
       .then((user) => res.json(user))
+      .catch((err) => res.status(422).json(err));
+  },
+
+  api: function (req, res) {
+    axios
+      .get(
+        "http://www.giantbomb.com/api/game/3030-38206/?api_key=fc4a6358afb139997f08f81ee8151bf95273318f&format=jsonp&field_list=name,description"
+      )
+      .then((data) => res.json(data))
       .catch((err) => res.status(422).json(err));
   },
 };

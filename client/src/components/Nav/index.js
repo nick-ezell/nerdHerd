@@ -70,7 +70,9 @@ const Nav = () => {
         </a>
 
         <a
-          onClick={() => {
+          href="/"
+          onClick={(event) => {
+            event.preventDefault();
             setisActive(!isActive);
           }}
           role="button"

@@ -1,2 +1,19 @@
 .gameListContainer {
+  width: 60%;
+  height: 75vh;
+  background-color: rgb(116, 116, 116);
+}
+
+.gameOfTheMonth {
+  width: 30%;
+  height: 75vh;
+  background-color: rgb(196, 196, 196);
+  margin: 0 !important;
+}
+
+.gameListWrapper {
+  height: 80vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }

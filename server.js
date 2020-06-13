@@ -2,11 +2,29 @@
 const express = require("express");
 const path = require("path");
 const mongoose = require("mongoose");
+// const cors = require("cors");
 
 const PORT = process.env.PORT || 3000;
-
 //Express init
 const app = express();
+
+// Then use it before your routes are set up:
+// app.use(cors());
+
+// // Set up a whitelist and check against it:
+// var whitelist = ["https://giantbomb.com"];
+// var corsOptions = {
+//   origin: function (origin, callback) {
+//     if (whitelist.indexOf(origin) !== -1) {
+//       callback(null, true);
+//     } else {
+//       callback(new Error("Not allowed by CORS"));
+//     }
+//   },
+// };
+
+// // Then pass them to cors:
+// app.use(cors(corsOptions));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -26,7 +44,7 @@ app.use(require("./routes/index"));
 // if (process.env.NODE_ENV === "production") {
 app.use(express.static("client/build"));
 // }
-//React app init
+// React app init
 // if (process.env.NODE_ENV === "production") {
 app.get("*", (req, res) =>
   res.sendFile(path.join(__dirname, "./client/build/index.html"))
