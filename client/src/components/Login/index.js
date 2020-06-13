@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import db from "../../utils/db/db";
 import { UserContext } from "../../utils/UserState";
 
@@ -10,8 +10,9 @@ const Login = () => {
 
   function handleLogin() {
     db.LoginUser(UserData)
-      .then((res) => {
-        console.log(res.data);
+      .then((UserData) => {
+        console.log(UserData);
+
         // console.log(res.data);
         // const data = res.data;
         // console.log(data);
@@ -87,7 +88,7 @@ const Login = () => {
                       className="button is-dark"
                       onClick={handleFormSubmit}
                     >
-                      <a id="buttonhref" href="/home">
+                      <a href="/home" id="buttonhref">
                         Login
                       </a>
                     </button>

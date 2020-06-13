@@ -95,7 +95,7 @@ const Nav = () => {
             <a href="/home" className="navbar-item">
               Home
             </a>
-            <a href="/Login" className="navbar-item">
+            <a href="/login" className="navbar-item">
               Login
             </a>
           </div>

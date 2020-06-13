@@ -100,7 +100,7 @@ const Signup = () => {
                       className="button is-dark"
                       onClick={handleFormSubmit}
                     >
-                      <a id="buttonhref" href="/home">
+                      <a href="/home" id="buttonhref">
                         Sign up
                       </a>
                     </button>
