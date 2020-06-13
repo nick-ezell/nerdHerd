@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import db from "../../utils/db/db";
+// import { ApiContext, UserContext } from "../../utils/UserState";
 
 const Login = () => {
   // Setting our component's initial state
   const [UserData, setUserData] = useState({});
+  // const api = useContext(ApiContext);
+  // const user = useContext(UserContext);
 
   function handleLogin() {
     db.LoginUser(UserData)

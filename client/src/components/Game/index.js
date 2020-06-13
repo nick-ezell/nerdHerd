@@ -1,7 +1,19 @@
-import React from "react";
+// import React, { useContext } from "react";
+// import { ApiContext } from "../../utils/UserState";
+// import "../GameList/index.css";
 
-const Games = (props) => {
-  return <div></div>;
-};
+// const Games = (props) => {
+//   const apiData = useContext(ApiContext);
 
-export default Games;
+//   return (
+//     <div className="gameImages">
+//       {apiData.map((i, index) => (
+//         <div>
+//           <img key={index} src={i} />
+//         </div>
+//       ))}
+//     </div>
+//   );
+// };
+
+// export default Games;

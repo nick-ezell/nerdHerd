@@ -1,7 +1,7 @@
 import { createContext } from "react";
 
 //Create a context for skill lists to be shown/hidden
-// const UserContext = createContext({});
+const GameContext = createContext([{}]);
 
 const ApiContext = createContext();
 
@@ -48,4 +48,4 @@ const ApiContext = createContext();
 //   return <Provider value={[state, dispatch]} {...props} />;
 // }
 
-export { ApiContext };
+export { ApiContext, GameContext };

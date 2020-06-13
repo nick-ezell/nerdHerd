@@ -1,25 +1,38 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./index.css";
 import image from "./gamesimage.png";
-import { ApiContext } from "../../utils/UserState";
+import { ApiContext, GameContext } from "../../utils/UserState";
+// import Axios from "axios";
 
 const GameList = () => {
-  const apiData = React.useContext(ApiContext);
+  const apiData = useContext(ApiContext);
+  const gameData = useContext(GameContext);
+  console.log(gameData);
+  const gameInfo = JSON.stringify(gameData);
+  console.log(gameInfo);
   console.log(apiData);
+
+  // Axios.get(
+  //   `https://cors-anywhere.herokuapp.comhttps://www.giantbomb.com/api/images/${"yo"}/?api_key=${
+  //     process.env.REACT_APP_API_KEY
+  //   }`
+  // );
 
   return (
     <div className="gameContainer">
       <div className="gameImg">
         <img src={image} alt="games" width="320" height="160" />
       </div>
+
       <div className="gameListWrapper box">
-        <div className="gameOfTheMonth box">
-          <br />
-          <button name="Pokémon" className="is-primary">
-            Button
-          </button>
+        {/* <div className="gameOfTheMonth box"></div> */}
+        <div className="gameListContainer box">
+          {apiData.map((i, index) => (
+            // <div className={index}>
+            <img key={index} className="game" src={i} alt="game" />
+            // </div>
+          ))}
         </div>
-        <div className="gameListContainer box"></div>
       </div>
     </div>
   );
