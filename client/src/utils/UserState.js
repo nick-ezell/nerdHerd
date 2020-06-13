@@ -1,49 +1,51 @@
-import React, { createContext, useContext, useReducer } from "react";
+import { createContext } from "react";
 
 //Create a context for skill lists to be shown/hidden
-const UserContext = createContext({});
+// const UserContext = createContext({});
 
-//Accessing context
-const useUserContext = () => {
-  return useContext(UserContext);
-};
-// console.log(useUserContext);
+const ApiContext = createContext();
 
-const { Provider } = UserContext;
+// //Accessing context
+// const useUserContext = () => {
+//   return useContext(UserContext);
+// };
+// // console.log(useUserContext);
 
-function reducer(state, action) {
-  //Set a condition on the event target's name
-  switch (action.type) {
-    //the first two cases in our switch pertain to our "Front-End" and "Back-End" buttons
-    //if hide
-    case "login":
-      const { email, username, password } = action.payload;
-      return {
-        ...state,
-        email: email,
-        username: username,
-        password: password,
-      };
+// const { Provider } = UserContext;
 
-    // case "email":
-    //   return {
-    //     ...state,
-    //     email: action.data,
-    //   };
+// function reducer(state, action) {
+//   //Set a condition on the event target's name
+//   switch (action.type) {
+//     //the first two cases in our switch pertain to our "Front-End" and "Back-End" buttons
+//     //if hide
+//     case "login":
+//       const { email, username, password } = action.payload;
+//       return {
+//         ...state,
+//         email: email,
+//         username: username,
+//         password: password,
+//       };
 
-    default:
-      console.log("Black Lives Matter");
-  }
-}
+//     // case "email":
+//     //   return {
+//     //     ...state,
+//     //     email: action.data,
+//     //   };
 
-function UserProvider({ value = [], ...props }) {
-  const [state, dispatch] = useReducer(reducer, {
-    email: "",
-    username: "",
-    password: "",
-  });
+//     default:
+//       console.log("Black Lives Matter");
+//   }
+// }
 
-  return <Provider value={[state, dispatch]} {...props} />;
-}
+// function UserProvider({ value = [], ...props }) {
+//   const [state, dispatch] = useReducer(reducer, {
+//     email: "",
+//     username: "",
+//     password: "",
+//   });
 
-export { UserProvider, useUserContext };
+//   return <Provider value={[state, dispatch]} {...props} />;
+// }
+
+export { ApiContext };

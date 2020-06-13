@@ -39,9 +39,12 @@ module.exports = {
 
   api: function (req, res) {
     axios
-      .get(
-        "http://www.giantbomb.com/api/game/3030-38206/?api_key=fc4a6358afb139997f08f81ee8151bf95273318f&format=jsonp&field_list=name,description"
-      )
+      .get({
+        method: "post",
+        url:
+          "http://www.giantbomb.com/api/game/3030-38206/?api_key=fc4a6358afb139997f08f81ee8151bf95273318f&format=jsonp&field_list=name,description",
+        baseURL: "",
+      })
       .then((data) => res.json(data))
       .catch((err) => res.status(422).json(err));
   },

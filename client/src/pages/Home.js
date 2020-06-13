@@ -1,5 +1,5 @@
 import React from "react";
-import GameList from "../components/GameList/index";
+import GameList from "../components/GameList/index.js";
 
 const Home = () => {
   return (
