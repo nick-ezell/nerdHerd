@@ -76,6 +76,7 @@ const Signup = () => {
                   </div>
                   <div className="field">
                     <label className="label">Password</label>
+
                     <div className="control has-icons-left">
                       <input
                         onChange={handleInputChange}
@@ -86,6 +87,9 @@ const Signup = () => {
                         className="input"
                         required
                       />
+                      <span className="is-size-7">
+                        &nbsp;&nbsp;&nbsp;(8 characters, 1 number, 1 special)
+                      </span>
                       <span className="icon is-small is-left">
                         <i className="fa fa-lock"></i>
                       </span>
@@ -96,7 +100,7 @@ const Signup = () => {
                       className="button is-dark"
                       onClick={handleFormSubmit}
                     >
-                      <a id="signup" href="/home">
+                      <a id="buttonhref" href="/home">
                         Sign up
                       </a>
                     </button>
