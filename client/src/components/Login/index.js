@@ -87,7 +87,7 @@ const Login = () => {
                       className="button is-dark"
                       onClick={handleFormSubmit}
                     >
-                      Login
+                      <a href="/home">Login</a>
                     </button>
                   </div>
                   <p>
