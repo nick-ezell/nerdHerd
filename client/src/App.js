@@ -53,14 +53,6 @@ function App() {
       });
   }, [length]);
 
-  // useEffect(() => {
-  //   // `https://cors-anywhere.herokuapp.comhttps://www.giantbomb.com/api/images/${guid}/?api_key=${process.env.REACT_APP_API_KEY}`
-
-  //     .catch(function (error) {
-  //       console.log(error);
-  //     });
-  // }, [length]);
-
   return (
     <ApiContext.Provider value={apiData}>
       <GameContext.Provider value={gameData}>
