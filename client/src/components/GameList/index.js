@@ -47,13 +47,15 @@ const GameList = () => {
 
   return (
     <div className="pageContainer">
-      <img
-        className="gameImg"
-        src="https://www.uokpl.rs/fpng/f/487-4874043_pacman-pac-man.png"
-        alt="games"
-        width="320"
-        height="460"
-      />
+      <div>
+        <img
+          className="gameImg"
+          src="https://www.uokpl.rs/fpng/f/487-4874043_pacman-pac-man.png"
+          alt="games"
+          width="320"
+          height="460"
+        />
+      </div>
       <div className={visibility.game + " box gameList"}>
         <button
           className="is-dark button transitionSlow"
