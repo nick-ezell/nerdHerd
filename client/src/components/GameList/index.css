@@ -38,16 +38,54 @@
   box-shadow: 1px 4px 5px #d7d7d7;
 }
 
+.game:hover {
+  cursor: pointer;
+}
+
+.transitionSlow {
+  -webkit-box-shadow: 0 1px 2px #000;
+  box-shadow: 0 1px 2px #000;
+  -webkit-transition: -webkit-box-shadow 0.4s ease-in-out;
+  transition: -webkit-box-shadow 0.4s ease-in-out;
+  transition: box-shadow 0.4s ease-in-out;
+  transition: box-shadow 0.4s ease-in-out, -webkit-box-shadow 0.4s ease-in-out;
+}
+
+.transitionSlow:hover {
+  cursor: pointer;
+  -webkit-box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+}
+
 .gameImg {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 7em;
   width: 7em;
+  position: absolute;
+  -webkit-animation: gameImg 7s linear infinite;
+  -moz-animation: gameImg 7s linear infinite;
+  -ms-animation: gameImg 7s linear infinite;
+  -o-animation: gameImg 7s linear infinite;
+  animation: gameImg 7s linear infinite;
+}
+
+@keyframes gameImg {
+  from {
+    left: -300px;
+    top: -110px;
+  }
+  50% {
+    left: 110%;
+  }
+  to {
+    right: -300px;
+  }
 }
 
 .gameContainer {
-  margin-bottom: 5vh;
+  margin-bottom: 12vh;
 }
 
 .hide {
@@ -67,8 +105,19 @@
 
 .gameBio {
   width: 50vw;
+  margin-top: 2vh;
+  margin-bottom: 3vh;
 }
 
 .pageContainer {
   padding-bottom: 5vh;
+}
+
+.currentGame {
+  box-shadow: 3px 6px 8px #d4d4d4;
+}
+
+.gameList {
+  margin-top: 20vh;
+  margin-bottom: 12vh;
 }

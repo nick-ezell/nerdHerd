@@ -47,34 +47,37 @@ const GameList = () => {
 
   return (
     <div className="pageContainer">
-      <div className="gameImg">
-        <img
-          src="https://www.uokpl.rs/fpng/f/487-4874043_pacman-pac-man.png"
-          alt="games"
-          width="320"
-          height="460"
-        />
-      </div>
-      <div className={visibility.game + " box"}>
-        <button className="is-dark button" onClick={handleVisibility}>
+      <img
+        className="gameImg"
+        src="https://www.uokpl.rs/fpng/f/487-4874043_pacman-pac-man.png"
+        alt="games"
+        width="320"
+        height="460"
+      />
+      <div className={visibility.game + " box gameList"}>
+        <button
+          className="is-dark button transitionSlow"
+          onClick={handleVisibility}
+        >
           Home
         </button>
         <div className="gamePage">
           <p className="is-size-2">{pageState.currentPage[0].name}</p>
           <br />
           <img
+            className="currentGame"
             src={pageState.currentPage[0].image}
             alt={pageState.currentPage[0].name}
             width="320"
             height="480"
           />
           <br />
-          <div className="gameBio">
+          <div className="gameBio box">
             <p className="is-size-6">{pageState.currentPage[0].deck}</p>
           </div>
         </div>
       </div>
-      <div className={visibility.home + " gameContainer"}>
+      <div className={visibility.home + " gameContainer gameList"}>
         <div className="gameListWrapper box">
           <p className="is-size-2">
             Greetings.{" "}
@@ -88,7 +91,7 @@ const GameList = () => {
               // <div className={index}>
               <img
                 key={index}
-                className="game"
+                className="game transitionSlow"
                 src={i.image}
                 alt="game"
                 name={i.name}
