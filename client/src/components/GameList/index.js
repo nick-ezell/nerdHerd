@@ -81,8 +81,8 @@ const GameList = () => {
       </div>
       <div className={visibility.home + " gameContainer gameList"}>
         <div className="gameListWrapper box">
-          <p className="is-size-2">
-            Greetings.{" "}
+          <p className="is-size-3">
+            Welcome to nerdHerd! Choose a game below.{" "}
             <span role="img" aria-label="accessible-emoji">
               🖖
             </span>{" "}
