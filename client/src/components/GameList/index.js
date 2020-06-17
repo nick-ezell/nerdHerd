@@ -64,7 +64,7 @@ const GameList = () => {
           Home
         </button>
         <div className="gamePage">
-          <p className="is-size-2">{pageState.currentPage[0].name}</p>
+          <p className="is-size-2 box">{pageState.currentPage[0].name}</p>
           <br />
           <img
             className="currentGame"
@@ -81,8 +81,13 @@ const GameList = () => {
       </div>
       <div className={visibility.home + " gameContainer gameList"}>
         <div className="gameListWrapper box">
+          <p className="is-size-5">
+            Tired of having no one to game with?
+            <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nerdHerd has you covered.
+          </p>
           <p className="is-size-3">
-            Welcome to nerdHerd! Choose a game below.{" "}
+            Choose a game below.{" "}
             <span role="img" aria-label="accessible-emoji">
               🖖
             </span>{" "}
