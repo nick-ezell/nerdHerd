@@ -86,12 +86,7 @@ const GameList = () => {
             <br />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nerdHerd has you covered.
           </p>
-          <p className="is-size-3">
-            Choose a game below.{" "}
-            <span role="img" aria-label="accessible-emoji">
-              🖖
-            </span>{" "}
-          </p>
+          <p className="is-size-3">Choose a game below. </p>
           {/* <div className="gameOfTheMonth box"></div> */}
           <div className="gameListContainer box">
             {gameData.map((i, index) => (
