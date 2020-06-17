@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import image from "./gamesimage.png";
+
 import "./index.css";
 
 import { GameContext } from "../../utils/UserState";
@@ -60,10 +60,6 @@ const GameList = () => {
         </button>
       </div>
       <div className={visibility.home + " gameContainer"}>
-        <div className="gameImg">
-          <img src={image} alt="games" width="320" height="160" />
-        </div>
-
         <div className="gameListWrapper box">
           {/* <div className="gameOfTheMonth box"></div> */}
           <div className="gameListContainer box">
