@@ -10,7 +10,7 @@ const Signup = () => {
     // const { email, username, password } = UserData;
     db.createUser(UserData)
       .then((res) => {
-        console.log(res);
+        console.log(res.data);
         // dispatch(data, {
         //   type: "login",
         //   payload: data,

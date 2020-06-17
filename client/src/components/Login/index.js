@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import db from "../../utils/db/db";
+// import history from "../../utils/history";
 // import { UserContext } from "../../utils/UserState";
 
 const Login = () => {
@@ -7,6 +8,10 @@ const Login = () => {
   const [UserData, setUserData] = useState({});
   // const api = useContext(ApiContext);
   // const user = useContext(UserContext);
+
+  // const handleRedirect = () => {
+  //   // history.push("/home");
+  // };
 
   function handleLogin() {
     db.LoginUser(UserData)
@@ -30,9 +35,10 @@ const Login = () => {
   }
 
   function handleFormSubmit(event) {
-    event.preventDefault();
+    // event.preventDefault();
     if (UserData.email && UserData.password) {
       handleLogin();
+      // handleRedirect();
     }
   }
 
