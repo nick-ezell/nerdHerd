@@ -7,12 +7,10 @@ const Signup = () => {
   const [UserData, setUserData] = useState({});
 
   const handleLogin = () => {
-    const { email, username, password } = UserData;
-    db.createUser(email, username, password)
+    // const { email, username, password } = UserData;
+    db.createUser(UserData)
       .then((res) => {
-        const data = res.data;
-
-        console.log(data);
+        console.log(res);
         // dispatch(data, {
         //   type: "login",
         //   payload: data,
