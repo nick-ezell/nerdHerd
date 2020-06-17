@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import db from "../../utils/db/db";
+import { Link } from "react-router-dom";
 // import { useUserContext } from "../../utils/UserState";
 
 const Signup = () => {
@@ -94,14 +95,14 @@ const Signup = () => {
                     </div>
                   </div>
                   <div className="field">
-                    <a href="/home" id="buttonhref">
+                    <Link to={"/home"}>
                       <button
                         className="button is-dark"
                         onClick={handleFormSubmit}
                       >
                         Sign up
                       </button>
-                    </a>
+                    </Link>
                   </div>
                 </form>
               </div>

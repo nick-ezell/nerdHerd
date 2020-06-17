@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import db from "../../utils/db/db";
+import { Link } from "react-router-dom";
 // import history from "../../utils/history";
 // import { UserContext } from "../../utils/UserState";
 
@@ -89,7 +90,7 @@ const Login = () => {
                     </label>
                   </div>
                   <div className="field">
-                    <a href="/home" id="buttonhref">
+                    <Link to={"/home"}>
                       <button
                         name="login"
                         className="button is-dark"
@@ -97,7 +98,7 @@ const Login = () => {
                       >
                         Login
                       </button>
-                    </a>
+                    </Link>
                   </div>
                   <p>
                     No account? <a href="/signup">Sign up here!</a>
