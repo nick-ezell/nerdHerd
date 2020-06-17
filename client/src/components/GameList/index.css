@@ -84,6 +84,19 @@
   }
 }
 
+@-webkit-keyframes gameImg {
+  from {
+    left: -300px;
+    top: -110px;
+  }
+  50% {
+    left: 110%;
+  }
+  to {
+    right: -300px;
+  }
+}
+
 .gameContainer {
   margin-bottom: 12vh;
 }
@@ -104,7 +117,7 @@
 }
 
 .gameBio {
-  width: 50vw;
+  width: 70vw;
   margin-top: 2vh;
   margin-bottom: 3vh;
 }

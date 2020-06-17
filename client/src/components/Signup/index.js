@@ -28,7 +28,6 @@ const Signup = () => {
   }
 
   function handleFormSubmit(event) {
-    event.preventDefault();
     if (UserData.email && UserData.password) {
       handleLogin();
       console.log(UserData);
@@ -87,7 +86,8 @@ const Signup = () => {
                         required
                       />
                       <span className="is-size-7">
-                        &nbsp;&nbsp;&nbsp;(8 characters, 1 number, 1 special)
+                        &nbsp;&nbsp;&nbsp;(Needs one capital, number and special
+                        character)
                       </span>
                       <span className="icon is-small is-left">
                         <i className="fa fa-lock"></i>
