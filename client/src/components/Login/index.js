@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import db from "../../utils/db/db";
-import { UserContext } from "../../utils/UserState";
+// import { UserContext } from "../../utils/UserState";
 
 const Login = () => {
   // Setting our component's initial state

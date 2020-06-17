@@ -1,3 +1,5 @@
-// import axios from "axios";
+import axios from "axios";
 
-// export default {};
+export const getHome = () => {
+  return axios.get("/games/api");
+};

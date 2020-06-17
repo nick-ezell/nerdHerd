@@ -1,16 +1,18 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import "./index.css";
 import image from "./gamesimage.png";
-import { ApiContext, GameContext } from "../../utils/UserState";
+import { GameContext } from "../../utils/UserState";
 // import Axios from "axios";
 
 const GameList = () => {
-  const apiData = useContext(ApiContext);
   const gameData = useContext(GameContext);
-  console.log(gameData);
-  const gameInfo = JSON.stringify(gameData);
-  console.log(gameInfo);
-  console.log(apiData);
+  const [pageState, setPageState] = useState({ currentPage: "#" });
+
+  const [visibility, setVisibility] = useState({ game: "hide", home: "show" });
+  // console.log(gameData[5]);
+  // const gameInfo = JSON.stringify(gameData);
+  // console.log(gameInfo);
+  // console.log(apiData);
 
   // Axios.get(
   //   `https://cors-anywhere.herokuapp.comhttps://www.giantbomb.com/api/images/${"yo"}/?api_key=${
@@ -18,20 +20,65 @@ const GameList = () => {
   //   }`
   // );
 
-  return (
-    <div className="gameContainer">
-      <div className="gameImg">
-        <img src={image} alt="games" width="320" height="160" />
-      </div>
+  const handleVisibility = () => {
+    if (visibility.game === "show") {
+      setVisibility({ game: "hide", home: "show" });
+    } else {
+      setVisibility({ game: "show", home: "hide" });
+    }
+    console.log();
 
-      <div className="gameListWrapper box">
-        {/* <div className="gameOfTheMonth box"></div> */}
-        <div className="gameListContainer box">
-          {apiData.map((i, index) => (
-            // <div className={index}>
-            <img key={index} className="game" src={i} alt="game" />
-            // </div>
-          ))}
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+  const handleImageClick = (event) => {
+    handleVisibility();
+    console.log(event.target.name);
+    const gameIndex = event.target.name;
+    setPageState({
+      ...pageState,
+      currentPage: gameData.filter((game) => game.name === gameIndex),
+    });
+    console.log(pageState);
+  };
+
+  return (
+    <div>
+      <div className={visibility.game + " box"}>
+        <p className="is-size-2">{pageState.currentPage[0].name}</p>
+        <img
+          src={pageState.currentPage[0].image}
+          alt={pageState.currentPage[0].name}
+          width="320"
+          height="160"
+        />
+        <button className="is-primary is-button" onClick={handleVisibility}>
+          Home
+        </button>
+      </div>
+      <div className={visibility.home + " gameContainer"}>
+        <div className="gameImg">
+          <img src={image} alt="games" width="320" height="160" />
+        </div>
+
+        <div className="gameListWrapper box">
+          {/* <div className="gameOfTheMonth box"></div> */}
+          <div className="gameListContainer box">
+            {gameData.map((i, index) => (
+              // <div className={index}>
+              <img
+                key={index}
+                className="game"
+                src={i.image}
+                alt="game"
+                name={i.name}
+                onClick={handleImageClick}
+              />
+              // </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
