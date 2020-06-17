@@ -1,5 +1,5 @@
 .gameListContainer {
-  width: 60%;
+  width: 75vw;
   height: 75vh;
   /* background-color: rgb(116, 116, 116); */
   box-shadow: inset 1px 4px 5px #d7d7d7;
@@ -26,6 +26,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  flex-direction: column;
   box-shadow: 1px 4px 5px #d7d7d7;
   padding: 1em;
 }
@@ -41,11 +42,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  opacity: 28%;
+  height: 7em;
+  width: 7em;
 }
 
 .gameContainer {
-  margin-bottom: 2em;
+  margin-bottom: 5vh;
 }
 
 .hide {
@@ -54,4 +56,19 @@
 
 .show {
   visibility: visible;
+}
+
+.gamePage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.gameBio {
+  width: 50vw;
+}
+
+.pageContainer {
+  padding-bottom: 5vh;
 }

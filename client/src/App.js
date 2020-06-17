@@ -24,6 +24,7 @@ function App() {
       .then((res) => {
         const data = res.data.results;
         console.log(data);
+
         setGameData(
           data.map((i) => {
             return {

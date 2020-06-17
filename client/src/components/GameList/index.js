@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-
+// import image from "./gamesimage.png";
 import "./index.css";
 
 import { GameContext } from "../../utils/UserState";
@@ -46,21 +46,42 @@ const GameList = () => {
   };
 
   return (
-    <div>
-      <div className={visibility.game + " box"}>
-        <p className="is-size-2">{pageState.currentPage[0].name}</p>
+    <div className="pageContainer">
+      <div className="gameImg">
         <img
-          src={pageState.currentPage[0].image}
-          alt={pageState.currentPage[0].name}
+          src="https://www.uokpl.rs/fpng/f/487-4874043_pacman-pac-man.png"
+          alt="games"
           width="320"
-          height="160"
+          height="460"
         />
-        <button className="is-primary is-button" onClick={handleVisibility}>
+      </div>
+      <div className={visibility.game + " box"}>
+        <button className="is-dark button" onClick={handleVisibility}>
           Home
         </button>
+        <div className="gamePage">
+          <p className="is-size-2">{pageState.currentPage[0].name}</p>
+          <br />
+          <img
+            src={pageState.currentPage[0].image}
+            alt={pageState.currentPage[0].name}
+            width="320"
+            height="480"
+          />
+          <br />
+          <div className="gameBio">
+            <p className="is-size-6">{pageState.currentPage[0].deck}</p>
+          </div>
+        </div>
       </div>
       <div className={visibility.home + " gameContainer"}>
         <div className="gameListWrapper box">
+          <p className="is-size-2">
+            Greetings.{" "}
+            <span role="img" aria-label="accessible-emoji">
+              🖖
+            </span>{" "}
+          </p>
           {/* <div className="gameOfTheMonth box"></div> */}
           <div className="gameListContainer box">
             {gameData.map((i, index) => (
