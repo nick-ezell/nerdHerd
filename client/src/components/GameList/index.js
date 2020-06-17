@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
-import "./index.css";
 import image from "./gamesimage.png";
+import "./index.css";
+
 import { GameContext } from "../../utils/UserState";
 // import Axios from "axios";
 
